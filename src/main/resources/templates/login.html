@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
+    <title>Login</title>
+</head>
+<body>
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<div class="container">
+    <div class="row py-2">
+        <div class="col-12">
+            <form th:action="@{/authenticateUser}" method="post">
+                <div class="form-group">
+                    <label for="username">User name</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter user name">
+                    <small class="form-text text-danger" th:if="${param.error != null}">Не правильно вводишь, бля ты заебал!</small>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <a class="px-3" th:href="@{/register}">Register</a>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<!--        <form th:action="@{/authenticateUser}" method="post">-->
+<!--        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>-->
+
+<!--        <div class="form-floating">-->
+<!--            <input type="text" class="form-control" id="username" placeholder="text">-->
+<!--            <label for="username">Email address</label>-->
+<!--            <small class = "text danger" th:each="err:@{fields.err('username')}"></small>-->
+<!--        </div>-->
+<!--        <div class="form-floating">-->
+<!--            <input type="password" class="form-control" id="password" placeholder="Password">-->
+<!--            <label for="password">Password</label>-->
+<!--            <small class = "text danger" th:each="err:@{fields.err('username')}"></small>-->
+<!--        </div>-->
+
+<!--        <div class="checkbox mb-3">-->
+<!--            <label>-->
+<!--                <input type="checkbox" value="remember-me"> Remember me-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <button class="w-100 btn btn-lg btn-primary" type="submit" >Sign in</button>-->
+<!--        <p class="mt-5 mb-3 text-muted">© 2017–2022</p>-->
+<!--            <p class="mt-5 mb-3 text-muted">created by Kulakov Yury</p>-->
+<!--    </form>-->
+</body>
+</html>
