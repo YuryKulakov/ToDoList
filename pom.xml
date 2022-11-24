@@ -75,7 +75,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.todo.todolist.TodolistApplication.java</mainClass>
+							<mainClass>com.todo.todolist.TodolistApplication</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
